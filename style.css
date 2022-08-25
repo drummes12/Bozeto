@@ -1,0 +1,158 @@
+:root {
+  --stroke: #2b2c34;
+  --main: #fffffe;
+  --highlight: #6246ea;
+  --secondary: #d1d1e9;
+  --tertiary: #e45858;
+  --gradient: linear-gradient(to bottom, var(--tertiary), var(var(--highlight)));
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  font-family: "Maven Pro", sans-serif;
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 20% 50% 30%;
+  grid-template-areas:
+    "nav      aside"
+    "section  aside"
+    "footer   aside";
+}
+
+.navbar {
+  background: var(--main);
+  grid-area: nav;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 0 40px;
+}
+.navbar__content .logo {
+  height: 50px;
+}
+#gradient-logo {
+  --gradient-logo-1: var(--tertiary);
+  --gradient-logo-2: var(--highlight);
+}
+.navbar__content ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  width: 450px;
+}
+.navbar__content ul li a {
+  text-decoration: none;
+  color: var(--tertiary);
+  font-weight: bold;
+}
+
+.loader {
+  position: absolute;
+  z-index: 3;
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url(./assets/wickedbackground.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: loader 4s linear forwards;
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loader svg {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+
+  fill: var(--main);
+}
+.loader svg:nth-child(1) {
+  transform: translateX(-1000px);
+  animation: scaling-up 4s ease-in-out forwards;
+}
+.loader svg:nth-child(2) {
+  transform: scale(0);
+  animation: scaling-middle 4s ease-in-out forwards;
+}
+.loader svg:nth-child(3) {
+  transform: translateX(1000px);
+  animation: scaling-down 4s ease-in-out forwards;
+}
+@keyframes scaling-middle {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: rotateZ(-90deg) scale(100);
+  }
+}
+@keyframes scaling-up {
+  0% {
+    transform: translateX(-1000px);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes scaling-down {
+  0% {
+    transform: translateX(1000px);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
