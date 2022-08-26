@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drummes12 | Proyecto Animaciones</title>
+    <!-- Files style & main -->
     <link rel="stylesheet" href="style.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,10 +54,10 @@
               </svg>
             </a>
             <ul>
-              <li><a href="/">CAMISETAS</a></li>
-              <li><a href="/">CUADROS</a></li>
-              <li><a href="/">POCILLOS</a></li>
-              <li><a href="/">SOBRE NOSOTROS</a></li>
+              <li><p class="btn-camisetas">CAMISETAS</p></li>
+              <li><p class="btn-cuadros">CUADROS</p></li>
+              <li><p class="btn-pocillos">POCILLOS</p></li>
+              <li><p class="btn-info">SOBRE NOSOTROS</p></li>
             </ul>
           </div>
         </nav>
@@ -72,48 +73,97 @@
           </p>
         </section>
 
-        <section class="side-content">
-          <div></div>
+        <section class="aside-content">
+          <div class="background-aside"></div>
           <p>Camiseta</p>
-          <svg
-            version="1.1"
-            id="element"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 455 455"
-            style="enable-background: new 0 0 455 455"
-            xml:space="preserve"
-          >
-            <path
-              d="M357.642,32.638l-66.814-15.896c0,0-18.622,32.784-63.328,32.784s-63.328-32.784-63.328-32.784L97.358,32.638L0,119.916
-	              l48.555,75.179l48.803-22.87v266.032h260.284V172.225l48.803,22.87L455,119.916L357.642,32.638z"
+          <div class="element-aside">
+            <!-- <svg
+              version="1.1"
+              id="element"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 455 455"
+              style="enable-background: new 0 0 455 455"
+              xml:space="preserve"
+            >
+              <path
+                d="M357.642,32.638l-66.814-15.896c0,0-18.622,32.784-63.328,32.784s-63.328-32.784-63.328-32.784L97.358,32.638L0,119.916
+                  l48.555,75.179l48.803-22.87v266.032h260.284V172.225l48.803,22.87L455,119.916L357.642,32.638z"
+              />
+            </svg> -->
+
+            <!-- <svg
+              version="1.1"
+              id="element"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 -10 125 120"
+            >
+              <g>
+                <path
+                  d="M96.396,16.242H14.018v54.066c0,7.319,6.323,13.123,13.163,13.123h53.404c7.724,0,12.979-6.479,12.979-13.123v-4.515
+                  c15.226,0,26.287-11.449,26.287-24.776C119.852,27.408,109.01,16.242,96.396,16.242z M110.137,41.033
+                  c0,7.769-5.721,15.183-16.574,14.482V26.391l2.832,0.004L96.4,26.4c10.429,0,13.776,9.884,13.738,14.642L110.137,41.033z"
+                />
+              </g>
+            </svg> -->
+
+            <svg viewBox="10 60 350 340" id="element">
+              <path
+                d="M 344.041 105.519 L 286.774 105.519 L 203.402 22.147 C 203.478 21.441 203.521 20.726 203.521 20 C 203.521 8.955 194.567 0 183.521 0 C 172.475 0 163.521 8.955 163.521 20 C 163.521 20.726 163.564 21.441 163.64 22.147 L 80.268 105.519 L 23.001 105.519 C 17.765 105.519 13.521 109.765 13.521 114.999 L 13.521 357.562 C 13.521 362.798 17.765 367.042 23.001 367.042 L 344.041 367.042 C 349.277 367.042 353.521 362.798 353.521 357.562 L 353.521 115 C 353.521 109.765 349.277 105.519 344.041 105.519 Z M 175.674 38.398 C 178.084 39.427 180.735 40 183.521 40 C 186.307 40 188.959 39.428 191.369 38.398 L 258.489 105.519 L 108.554 105.519 L 175.674 38.398 Z"
+              ></path>
+            </svg>
+            <input type="color" id="colorpicker-aside" value="#ffffff">
+            <img
+              id="print-aside"
+              src="https://i.ibb.co/tKWqw8J/spiderman.png"
+              alt="print-aside"
             />
-          </svg>
+          </div>
         </section>
 
         <section class="footer">
-          <div></div>
           <ul class="footer-content">
+            <li><div></div></li>
             <li>
               <div>
                 <div class="background-print"></div>
-                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="print">
+                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="print" />
               </div>
             </li>
             <li>
               <div>
                 <div class="background-print"></div>
-                <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="print">
+                <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="print" />
               </div>
             </li>
             <li>
               <div>
                 <div class="background-print"></div>
-                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="print">
+                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="print" />
               </div>
             </li>
+            <li>
+              <div>
+                <div class="background-print"></div>
+                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="print" />
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="background-print"></div>
+                <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="print" />
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="background-print"></div>
+                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="print" />
+              </div>
+            </li>
+            <li><div></div></li>
           </ul>
         </section>
       </section>
@@ -131,8 +181,104 @@
           <path d="M 500 370 L 500 500 L 145.5 500 L 275 370 L 500 370 Z" />
         </svg>
       </section>
-      <!-- Modal -->
-      <section></section>
+      <!-- Info -->
+      <section class="info hidden">
+        <div class="info-content">
+          <div class="close-info">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z"
+              />
+            </svg>
+          </div>
+          <svg
+            class="logo"
+            viewBox="0 0 500 500"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs></defs>
+            <path d="M 354.5 0 L 0 0 L 0 130 L 225 130 Z" />
+            <path d="M 400 0 L 500 0 L 500 100 L 100 500 L 0 500 L 0 400 Z" />
+            <path d="M 500 370 L 500 500 L 145.5 500 L 275 370 Z" />
+          </svg>
+          <h1>BOZETO CHOCONTA</h1>
+          <div class="social-icons">
+            <a href="/">
+              <svg
+                version="1.1"
+                id="instagram-logo"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 551.034 551.034"
+                style="enable-background: new 0 0 551.034 551.034"
+                xml:space="preserve"
+              >
+                <g id="XMLID_13_">
+                  <path
+                    id="XMLID_17_"
+                    d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722
+                  c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156
+                  C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156
+                  c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722
+                  c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"
+                  />
+                  <path
+                    id="XMLID_81_"
+                    d="M275.517,133C196.933,133,133,196.933,133,275.516
+                  s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6
+                  c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083
+                  C362.6,323.611,323.611,362.6,275.517,362.6z"
+                  />
+                  <circle id="XMLID_83_" cx="418.306" cy="134.072" r="34.149" />
+                </g>
+              </svg>
+              <p>@bozeto.choconta</p>
+            </a>
+            <a href="/">
+              <svg
+                version="1.1"
+                id="whatsapp-logo"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 418.135 418.135"
+                style="enable-background: new 0 0 418.135 418.135"
+                xml:space="preserve"
+              >
+                <g>
+                  <path
+                    d="M198.929,0.242C88.5,5.5,1.356,97.466,1.691,208.02c0.102,33.672,8.231,65.454,22.571,93.536
+                  L2.245,408.429c-1.191,5.781,4.023,10.843,9.766,9.483l104.723-24.811c26.905,13.402,57.125,21.143,89.108,21.631
+                  c112.869,1.724,206.982-87.897,210.5-200.724C420.113,93.065,320.295-5.538,198.929,0.242z M323.886,322.197
+                  c-30.669,30.669-71.446,47.559-114.818,47.559c-25.396,0-49.71-5.698-72.269-16.935l-14.584-7.265l-64.206,15.212l13.515-65.607
+                  l-7.185-14.07c-11.711-22.935-17.649-47.736-17.649-73.713c0-43.373,16.89-84.149,47.559-114.819
+                  c30.395-30.395,71.837-47.56,114.822-47.56C252.443,45,293.218,61.89,323.887,92.558c30.669,30.669,47.559,71.445,47.56,114.817
+                  C371.446,250.361,354.281,291.803,323.886,322.197z"
+                  />
+                  <path
+                    d="M309.712,252.351l-40.169-11.534c-5.281-1.516-10.968-0.018-14.816,3.903l-9.823,10.008
+                  c-4.142,4.22-10.427,5.576-15.909,3.358c-19.002-7.69-58.974-43.23-69.182-61.007c-2.945-5.128-2.458-11.539,1.158-16.218
+                  l8.576-11.095c3.36-4.347,4.069-10.185,1.847-15.21l-16.9-38.223c-4.048-9.155-15.747-11.82-23.39-5.356
+                  c-11.211,9.482-24.513,23.891-26.13,39.854c-2.851,28.144,9.219,63.622,54.862,106.222c52.73,49.215,94.956,55.717,122.449,49.057
+                  c15.594-3.777,28.056-18.919,35.921-31.317C323.568,266.34,319.334,255.114,309.712,252.351z"
+                  />
+                </g>
+              </svg>
+              <p>+57 (319) 263 3666</p>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
