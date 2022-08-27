@@ -9,11 +9,9 @@
   --tertiary: #e15fed;
   --quaternary: #6edcd9;
   --animation-bounce: cubic-bezier(0.95, 2.5, 0.4, -0.2);
-  --ss: calc(0.1em + 1.5vw);
-  --sm: calc(1.0em + 1.5vw);
-  --sl: calc(2.0em + 1.5vw);
-  /* --sm: 28px;
-  --sl: 36px; */
+  --ss: calc(0.1em + 1vw + 1vh);
+  --sm: calc(0.5em + 1vw + 1vh);
+  --sl: calc(1.0em + 1vw + 1vh);
 }
 
 .hidden {
@@ -26,9 +24,9 @@
 
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
 
   font-family: "Maven Pro", sans-serif;
 }
@@ -210,7 +208,7 @@ body {
 .main-content h1 {
   font-size: var(--sl);
   font-weight: 900;
-  margin: 8px 0 28px 0;
+  margin: 9px 0 28px 0;
   line-height: 80%;
 
   background-image:linear-gradient(45deg, var(--quaternary), var(--secondary));
