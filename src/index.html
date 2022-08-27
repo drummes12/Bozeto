@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drummes12 | Proyecto Animaciones</title>
-    <!-- Files style & main -->
+    <!-- Files -->
     <link rel="stylesheet" href="style.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,7 +53,18 @@
                 />
               </svg>
             </a>
-            <ul>
+            <ul class="dropdown-menu" id="desktop">
+              <li><p class="btn-camisetas">CAMISETAS</p></li>
+              <li><p class="btn-cuadros">CUADROS</p></li>
+              <li><p class="btn-pocillos">POCILLOS</p></li>
+              <li><p class="btn-info">SOBRE NOSOTROS</p></li>
+            </ul>
+            <div class="icon-navbar">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <ul class="dropdown-menu hidden" id="mobile">
               <li><p class="btn-camisetas">CAMISETAS</p></li>
               <li><p class="btn-cuadros">CUADROS</p></li>
               <li><p class="btn-pocillos">POCILLOS</p></li>
@@ -75,95 +86,62 @@
 
         <section class="aside-content">
           <div class="background-aside"></div>
-          <p>Camiseta</p>
+          <p></p>
           <div class="element-aside">
-            <!-- <svg
-              version="1.1"
-              id="element"
+            <svg 
+              class="element"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 455 455"
-              style="enable-background: new 0 0 455 455"
-              xml:space="preserve"
-            >
-              <path
-                d="M357.642,32.638l-66.814-15.896c0,0-18.622,32.784-63.328,32.784s-63.328-32.784-63.328-32.784L97.358,32.638L0,119.916
-                  l48.555,75.179l48.803-22.87v266.032h260.284V172.225l48.803,22.87L455,119.916L357.642,32.638z"
-              />
-            </svg> -->
-
-            <!-- <svg
-              version="1.1"
-              id="element"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 -10 125 120"
-            >
-              <g>
-                <path
-                  d="M96.396,16.242H14.018v54.066c0,7.319,6.323,13.123,13.163,13.123h53.404c7.724,0,12.979-6.479,12.979-13.123v-4.515
-                  c15.226,0,26.287-11.449,26.287-24.776C119.852,27.408,109.01,16.242,96.396,16.242z M110.137,41.033
-                  c0,7.769-5.721,15.183-16.574,14.482V26.391l2.832,0.004L96.4,26.4c10.429,0,13.776,9.884,13.738,14.642L110.137,41.033z"
+              viewBox="-5 0 210 210"
+              width="210"
+              height="210">
+              <filter id='inset-shadow'>
+                <!-- Shadow offset -->
+                <feOffset
+                  dx='0'
+                  dy='0'
                 />
-              </g>
-            </svg> -->
-
-            <svg viewBox="10 60 350 340" id="element">
-              <path
-                d="M 344.041 105.519 L 286.774 105.519 L 203.402 22.147 C 203.478 21.441 203.521 20.726 203.521 20 C 203.521 8.955 194.567 0 183.521 0 C 172.475 0 163.521 8.955 163.521 20 C 163.521 20.726 163.564 21.441 163.64 22.147 L 80.268 105.519 L 23.001 105.519 C 17.765 105.519 13.521 109.765 13.521 114.999 L 13.521 357.562 C 13.521 362.798 17.765 367.042 23.001 367.042 L 344.041 367.042 C 349.277 367.042 353.521 362.798 353.521 357.562 L 353.521 115 C 353.521 109.765 349.277 105.519 344.041 105.519 Z M 175.674 38.398 C 178.084 39.427 180.735 40 183.521 40 C 186.307 40 188.959 39.428 191.369 38.398 L 258.489 105.519 L 108.554 105.519 L 175.674 38.398 Z"
-              ></path>
+                <!-- Shadow blur -->
+                <feGaussianBlur
+                  stdDeviation='10'
+                  result='offset-blur'
+                />
+                <!-- Invert drop shadow to make an inset shadow-->
+                <feComposite
+                  operator='out'
+                  in='SourceGraphic'
+                  in2='offset-blur'
+                  result='inverse'
+                />
+                <!-- Cut colour inside shadow -->
+                <feFlood
+                  flood-color='black'
+                  flood-opacity='.95'
+                  result='color'
+                />
+                <feComposite
+                  operator='in'
+                  in='color'
+                  in2='inverse'
+                  result='shadow'
+                />
+                <!-- Placing shadow over element -->
+                <feComposite
+                  operator='over'
+                  in='shadow'
+                  in2='SourceGraphic'
+                /> 
+              </filter>
+              <g filter="url(#inset-shadow)"></g>
             </svg>
             <input type="color" id="colorpicker-aside" value="#ffffff">
-            <img
-              id="print-aside"
-              src="https://i.ibb.co/tKWqw8J/spiderman.png"
-              alt="print-aside"
-            />
           </div>
+          <input type="range" min="10" max="90" value="50" class="slider hidden" id="slider-size">
+          <input type="range" min="0" max="100" value="50" class="slider hidden" id="slider-position-x">
+          <input type="range" min="0" max="100" value="50" class="slider hidden" id="slider-position-y">
         </section>
 
         <section class="footer">
           <ul class="footer-content">
-            <li><div></div></li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="print" />
-              </div>
-            </li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="print" />
-              </div>
-            </li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="print" />
-              </div>
-            </li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="print" />
-              </div>
-            </li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="print" />
-              </div>
-            </li>
-            <li>
-              <div>
-                <div class="background-print"></div>
-                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="print" />
-              </div>
-            </li>
-            <li><div></div></li>
           </ul>
         </section>
       </section>
@@ -200,16 +178,14 @@
           <svg
             class="logo"
             viewBox="0 0 500 500"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs></defs>
+            xmlns="http://www.w3.org/2000/svg">
             <path d="M 354.5 0 L 0 0 L 0 130 L 225 130 Z" />
             <path d="M 400 0 L 500 0 L 500 100 L 100 500 L 0 500 L 0 400 Z" />
             <path d="M 500 370 L 500 500 L 145.5 500 L 275 370 Z" />
           </svg>
           <h1>BOZETO CHOCONTA</h1>
           <div class="social-icons">
-            <a href="/">
+            <a href="https://www.instagram.com/bozeto.choconta/" target="_blank">
               <svg
                 version="1.1"
                 id="instagram-logo"
@@ -218,7 +194,6 @@
                 x="0px"
                 y="0px"
                 viewBox="0 0 551.034 551.034"
-                style="enable-background: new 0 0 551.034 551.034"
                 xml:space="preserve"
               >
                 <g id="XMLID_13_">
@@ -242,7 +217,7 @@
               </svg>
               <p>@bozeto.choconta</p>
             </a>
-            <a href="/">
+            <a href="https://api.whatsapp.com/send/?phone=573105032490&text=LoremIpsum&type=phone_number&app_absent=0" target="_blank">
               <svg
                 version="1.1"
                 id="whatsapp-logo"
@@ -251,7 +226,6 @@
                 x="0px"
                 y="0px"
                 viewBox="0 0 418.135 418.135"
-                style="enable-background: new 0 0 418.135 418.135"
                 xml:space="preserve"
               >
                 <g>
@@ -273,7 +247,29 @@
                   />
                 </g>
               </svg>
-              <p>+57 (319) 263 3666</p>
+              <p>+57 (310) 503 2490</p>
+            </a>
+            <a href="https://goo.gl/maps/VGtKRKCJ9tjbr3ex8" target="_blank">
+              <svg 
+                version="1.1"
+                id="maps-logo"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px"
+                viewBox="0 0 512 512"
+                xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M256,0C154.739,0,72.348,82.386,72.348,183.652c0,70.241,18.514,94.635,169.771,320.929
+                    C245.217,509.217,250.424,512,256,512s10.782-2.783,13.881-7.418c151.251-226.216,169.771-251.423,169.771-320.929
+                    C439.652,82.386,357.261,0,256,0z M256,267.13c-46.032,0-83.478-37.446-83.478-83.478c0-46.032,37.446-83.478,83.478-83.478
+                    s83.478,37.446,83.478,83.478C339.478,229.684,302.032,267.13,256,267.13z"/>
+                </g>
+              </svg>
+              <p>
+                Centro Comercial Quinta Avenida
+                Local 104 | Chocontá
+              </p>
             </a>
           </div>
         </div>
