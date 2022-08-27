@@ -35,7 +35,7 @@ body {
 
 .page {
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -61,15 +61,8 @@ body {
   width: 100%;
   padding: 0 40px;
 }
-.navbar__content .logo {
-  height: 50px;
-
-  transform: scale(0);
-  animation: navbar 0.5s var(--animation-bounce) 4s forwards;
-}
-#gradient-logo {
-  --gradient-logo-1: var(--highlight);
-  --gradient-logo-2: var(--tertiary);
+.navbar__content .logo-url {
+  height: 100%;
 }
 .navbar__content .logo-url:not(hover) {
   filter: drop-shadow(-3px 6px 4px var(--shadow));
@@ -81,6 +74,18 @@ body {
 .navbar__content .logo-url:active {
   transform: translateY(2px);
   filter: drop-shadow(-3px 4px 2px var(--shadow));
+}
+.navbar__content .logo {
+  height: 70%;
+  padding: 10px;
+  cursor: pointer;
+
+  transform: scale(0);
+  animation: navbar 0.5s var(--animation-bounce) 4s forwards;
+}
+#gradient-logo {
+  --gradient-logo-1: var(--highlight);
+  --gradient-logo-2: var(--tertiary);
 }
 .navbar__content .dropdown-menu#desktop {
   display: flex;
@@ -431,7 +436,7 @@ body {
 
   flex-flow: row nowrap;
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
+  overflow-x: visible;
   overflow-y: hidden;
 }
 .footer .footer-content li:first-child div, 
@@ -451,11 +456,11 @@ body {
 }
 .footer .footer-content div .background-print {
   position: absolute;
-  height: 80px;
-  width: 80px;
+  height: 40%;
+  width: 100%;
   border-radius: 50%;
   background: var(--main);
-  bottom: 10px;
+  bottom: 2%;
   
   transform: rotateX(70deg);
   box-shadow: 0 8px 5px 2px var(--shadow);
@@ -492,7 +497,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  background: url(https://raw.githubusercontent.com/drummes12/Bozeto/cdec7f12c2d9efe178e6bcd785080599be953b9c/assets/images/wickedbackground.svg);
+  background: url(./assets/images/wickedbackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
   animation: loader 4s linear forwards;
@@ -582,19 +587,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+.info > a {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--main);
+  text-decoration: none;
+}
 .info-content {
   position: relative;
-  height: 50%;
+  height: 70%;
   width: 80%;
   left: 0;
   right: 0;
   margin: 0 auto;
   
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 10% 65% 25%;
   
-  background: url(https://raw.githubusercontent.com/drummes12/Bozeto/cdec7f12c2d9efe178e6bcd785080599be953b9c/assets/images/wickedbackground.svg);
+  background: url(./assets/images/wickedbackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -627,40 +641,92 @@ body {
   stroke-width: 2px;
 }
 .info-content .logo {
-  height: 300px;
-  padding: 20px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  height: 50px;
   fill: var(--main);
 
   filter: 
-    drop-shadow(-30px 10px 2px var(--shadow));
+    drop-shadow(-4px 4px 4px var(--shadow));
 }
 .info-content h1 {
   margin: 0;
-  width: 100%;
+  width: 80%;
 
   color: var(--main);
   text-align: center;
-  font-size: var(--sl);
   font-weight: 900;
 }
+.info-content .container-slider {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.info-content .info-content-slider {
+  height: 100%;
+  transform-style: preserve-3d;
+  overflow-y: hidden;
+  overflow-x: visible;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  scroll-snap-type: x mandatory;
+}
+.info-content .info-content-slider .cards {
+  height: 60%;
+  display: flex;
+}
+.info-content .info-content-slider .cards:first-child div {
+  width: calc(80px + 4vw);
+}
+.info-content .info-content-slider .cards:last-child div {
+  width: calc(80px + 4vw);
+}
+.info-content .info-content-slider .cards .card {
+  height: 100%;
+  cursor: pointer;
+  transform: scale(1);
+  
+  transition: transform 0.4s ease-out;
+}
+.info-content .info-content-slider .cards .card img {
+  object-fit: cover;
+  height: 100%;
+  width: calc(80px + 4vw);
+  scroll-snap-align: center;
+  border-radius: 20px;
+}
+.info-content .info-content-slider .card:hover {
+  transform: scale(1.5);
+  opacity: 1;
+  z-index: 1;
+}
+.info-content .info-content-slider .card:hover img {
+  box-shadow: 0 0 10px var(--shadow);
+}
 .info-content .social-icons {
-  padding: 10px;
+  height: 100%;
+  width: 100%;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  gap: 20px;
 }
 .info-content .social-icons a {
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   
   transform: scale(1);
   transition: transform 0.5s ease-in-out;
 }
 .info-content .social-icons a svg {
-  height: 50px;
+  height: 55px;
 }
 .info-content .social-icons a #instagram-logo {
   object-fit: contain;
@@ -681,7 +747,6 @@ body {
   margin: 0;
   color: var(--main);
   text-align: center;
-  font-size: var(--ss);
   font-weight: 700;
 }
 .info-content .social-icons a:hover {
@@ -711,18 +776,11 @@ body {
     justify-content: space-between;
     padding: 0;
   }
-  .navbar__content .logo {
-    height: 60px;
-    padding: 10px;
-
-    transform: scale(0);
-    animation: navbar 0.5s var(--animation-bounce) 4s forwards;
-  }
 
   .navbar__content .icon-navbar {
     cursor: pointer;
     right: 0;
-    height: 50px;
+    height: 90%;
     width: 50px;
     padding: 10px;
 
@@ -748,6 +806,9 @@ body {
   .info .social-icons a p {
     display: none;
   }
+  .background-aside {
+    border-radius: 40px 0 0 0;
+  }
 }
 @media (min-width: 641px) and (max-width: 1007px) {
   .container {
@@ -763,6 +824,9 @@ body {
   }
   .navbar__content .icon-navbar {
     display: none !important;
+  }
+  .background-aside {
+    border-radius: 40px 0 0 0;
   }
 }
 @media (min-width: 1008px) {
