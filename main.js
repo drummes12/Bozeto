@@ -59,7 +59,7 @@ function changeColorPicker(event) {
 }
 
 function getDesigns () {
-  const urlDesigns = "../designs.json";
+  const urlDesigns = "https://raw.githubusercontent.com/drummes12/Bozeto/main/designs.json";
   
   fetch(urlDesigns)
     .then((response) => response.json())

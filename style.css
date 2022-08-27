@@ -492,7 +492,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  background: url(../assets/images/wickedbackground.svg);
+  background: url(https://raw.githubusercontent.com/drummes12/Bozeto/cdec7f12c2d9efe178e6bcd785080599be953b9c/assets/images/wickedbackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
   animation: loader 4s linear forwards;
@@ -594,7 +594,7 @@ body {
   flex-direction: column;
   justify-content: center;
   
-  background: url(../assets/images/wickedbackground.svg);
+  background: url(https://raw.githubusercontent.com/drummes12/Bozeto/cdec7f12c2d9efe178e6bcd785080599be953b9c/assets/images/wickedbackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
 
