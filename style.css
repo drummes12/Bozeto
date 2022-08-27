@@ -63,6 +63,8 @@ body {
 }
 .navbar__content .logo-url {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 .navbar__content .logo-url:not(hover) {
   filter: drop-shadow(-3px 6px 4px var(--shadow));
@@ -837,6 +839,9 @@ body {
       "nav      aside"
       "section  aside"
       "footer   aside";
+  }
+  .navbar__content .logo {
+    height: 50%;
   }
   
   .dropdown-menu#mobile {
