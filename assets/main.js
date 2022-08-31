@@ -42,7 +42,7 @@ function pathCamisetas() {
 }
 function pathSudaderas() {
   element.innerHTML = svg_sudaderas;
-  document.querySelector(".aside-content p").textContent = "Sudaderas";
+  document.querySelector(".aside-content p").textContent = "Buzos";
   document.querySelector(".element path").style.fill = "#fff";
 }
 function pathMugs() {
@@ -71,14 +71,16 @@ function changeColorPicker(event) {
 }
 
 function getPrints() {
-  const urlPrints = "https://630f8d20498924524a90c6a3.mockapi.io/prints";
+  const urlPrints = "https://630fd76b498924524a9686ce.mockapi.io/bozeto";
 
   fetch(urlPrints)
     .then((response) => response.json())
     .then((data) => {
-      renderPrints(data);
+      renderPrints(data[0].prints);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 function renderPrints(prints) {
@@ -134,25 +136,27 @@ function renderPrints(prints) {
     };
   });
 
-  prints.forEach((print) => {
-    const list = document.createElement("li");
-    const containerPrint = document.createElement("div");
-    const backgroundPrint = document.createElement("div");
-    const imgPrint = document.createElement("img");
+  if (prints !== undefined) {
+    prints.forEach((print) => {
+      const list = document.createElement("li");
+      const containerPrint = document.createElement("div");
+      const backgroundPrint = document.createElement("div");
+      const imgPrint = document.createElement("img");
 
-    backgroundPrint.classList.add("background-print");
-    imgPrint.setAttribute("src", print.url);
-    imgPrint.setAttribute("alt", print.name);
+      backgroundPrint.classList.add("background-print");
+      imgPrint.setAttribute("src", print.url);
+      imgPrint.setAttribute("alt", print.name);
 
-    footer_content.appendChild(list);
-    list.appendChild(containerPrint);
-    containerPrint.appendChild(backgroundPrint);
-    containerPrint.appendChild(imgPrint);
+      footer_content.appendChild(list);
+      list.appendChild(containerPrint);
+      containerPrint.appendChild(backgroundPrint);
+      containerPrint.appendChild(imgPrint);
 
-    imgPrint.addEventListener("click", () => {
-      printPrints(print);
+      imgPrint.addEventListener("click", () => {
+        printPrints(print);
+      });
     });
-  });
+  }
 
   const listEnd = document.createElement("li");
   const containerEnd = document.createElement("div");
@@ -188,14 +192,16 @@ function printPrints(print) {
 }
 
 function getDesigns() {
-  const urlDesigns = "https://630f8d20498924524a90c6a3.mockapi.io/designs";
+  const urlDesigns = "https://630fd76b498924524a9686ce.mockapi.io/bozeto";
 
   fetch(urlDesigns)
     .then((response) => response.json())
     .then((data) => {
-      renderDesign(data);
+      renderDesign(data[0].designs);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 function renderDesign(designs) {
@@ -207,17 +213,19 @@ function renderDesign(designs) {
   containerStart.appendChild(containerStartWidth);
   cards_content.appendChild(containerStart);
 
-  designs.forEach((design) => {
-    const card = document.createElement("div");
-    const imgDesign = document.createElement("img");
+  if (designs !== undefined) {
+    designs.forEach((design) => {
+      const card = document.createElement("div");
+      const imgDesign = document.createElement("img");
 
-    card.classList.add("card");
-    imgDesign.setAttribute("src", design.url);
-    imgDesign.setAttribute("alt", design.id);
+      card.classList.add("card");
+      imgDesign.setAttribute("src", design.url);
+      imgDesign.setAttribute("alt", design.id);
 
-    cards_content.appendChild(card);
-    card.appendChild(imgDesign);
-  });
+      cards_content.appendChild(card);
+      card.appendChild(imgDesign);
+    });
+  }
 
   const containerEnd = document.createElement("div");
   const containerEndWidth = document.createElement("div");
