@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drummes12/ProyectoAnimaciones.git"
+    "url": "git+https://github.com/drummes12/Bozeto.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drummes12/ProyectoAnimaciones/issues"
+    "url": "https://github.com/drummes12/Bozeto/issues"
   },
-  "homepage": "https://github.com/drummes12/ProyectoAnimaciones#readme",
+  "homepage": "https://github.com/drummes12/Bozeto#readme",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
